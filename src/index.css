@@ -1,4 +1,8 @@
-
+@font-face {
+  font-family: 'get_schwifty';
+  src: url('/public/get_schwifty.ttf') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+       url('/public/get_schwifty.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
+} 
 
 body {
  
@@ -15,6 +19,29 @@ code {
     monospace;
 }
 
+.custom-card:hover {
+  border-color: blue;
+}
+
+
+@media (max-width: 576px) {
+  .mobile-image {
+    max-width: 150px;
+  }
+}
+
+.episode-container {
+  background-color: rgb(60, 62, 68);
+  border-radius: 10px;
+  padding: 10px;
+  height: 100%;
+  box-shadow: 0 0 10px rgba(8, 186, 227, 0.5), 0 0 10px rgba(8, 186, 227, 0.5) inset;
+}
+
+
+
+
+
 .home-page {
   background-image: url("https://media.istockphoto.com/id/971578384/pt/foto/night-sky-with-stars-and-soft-milky-way-universe-as-background-or-texture.jpg?s=170667a&w=0&k=20&c=F4pQgOxNXcTkQreq4afT5UcGJRrJWZWKZnF-IOO98jI=");
     background-size: cover;
@@ -28,14 +55,14 @@ code {
     height: 650px;
 }
 
-#navigate {
+/* #navigate {
   background-color: black;
   color: white;
 }
 #navigate .nav-link {
 
   color: white;
-}
+} */
 
 #r-m{
   margin: 50px 50px 20px;

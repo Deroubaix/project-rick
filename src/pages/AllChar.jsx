@@ -53,56 +53,53 @@ function AllChar() {
   }
 
   return (
-    <Container className="d-flex justify-content-center align-items-start">
+    <Container className="d-flex justify-content-center align-items-start" style={{ minHeight: '100vh' }}>
       <div className="d-flex flex-column" style={{ backgroundColor: 'rgb(39, 43, 51)', width: '100%' }}>
         <Row className="mb-3">
           <Col className="d-flex justify-content-center">
-            <Form.Control type="text" placeholder="Search by name" value={searchName} onChange={handleSearchNameChange} style={{ width: '50%', marginTop: '20px' }} />
+            <Form.Control type="text" placeholder="Search by name" value={searchName} onChange={handleSearchNameChange} style={{ width: '50%', marginTop: '70px' }} />
           </Col>
         </Row>
-        <div style={{ height: '550px', overflowY: 'auto', backgroundColor: 'rgb(60, 62, 68)', borderRadius: '10px'}}>
+        <div style={{ maxHeight: 'calc(100vh - 200px)', overflowY: 'auto', backgroundColor: 'rgb(60, 62, 68)', borderRadius: '10px' }}>
           <Row id='r-m' className="mb-3">
             {allCharacters.filter(filterCharacters).map((character) => (
-              <Col key={character.id} lg={6} md={6} sm={12} xs={12}>
+              <Col key={character.id} lg={3} md={6} sm={12} xs={12} style={{ marginBottom: '15px' }}>
                 <Link to={`/charactersepisode/${character.id}`} style={{ textDecoration: 'none' }}>
-                  <Card className="my-2" style={{borderRadius: '10px', overflow: 'hidden', border: 'none', width: '100%'}}>
-                    <div className="d-flex">
-                      <Card.Img variant="top" src={character.image} alt={character.name} style={{ height: 'auto', objectFit: 'cover', width: 'auto', minWidth: '80px' }} />
-                      <Card.Body className="d-flex flex-column" style={{ width: '70%', paddingLeft: '20px', backgroundColor: 'rgb(39, 43, 51)', minHeight: '250px' }}>
+                  <Card className="my-2 custom-card " style={{ borderRadius: '10px', overflow: 'hidden', border: 'none', width: '100%',  margin: '0 auto' , maxWidth: '400px' }}>
+                    <div className="d-flex flex-column" style={{ height: '100%' }}>
+                      <Card.Img variant="top" src={character.image} alt={character.name} style={{ height: 'auto', objectFit: 'cover', width: '100%', minHeight: '200px' }} />
+                      <Card.Body className="d-flex flex-column w-100 hover-shadow" style={{ flex: '1', paddingLeft: '20px', backgroundColor: 'rgb(39, 43, 51)', width: '100%', border: '1px solid transparent', transition: 'border-color 0.6s' }}>
                         <div>
-                  <Card.Title className="text-start" style={{ color: 'white', fontSize: '1.8rem', fontWeight: '800' }}>{character.name} </Card.Title>
-                  <div>
-                    <Card.Text className="text-start" style={{ color: 'white', fontSize: '14px'}}>
-                      {getStatusIcon(character.status)} {character.status} - {character.species} 
-                    </Card.Text>
-                  </div>
-                  <Card.Text className="text-start">
-                    <b className='test-color' style={{ color: 'rgb(158, 158, 158)', fontSize: '14px'}}>Gender:</b> <span style={{ color: 'white'}}>{character.gender} </span><br />
-                    <b className='test-color' style={{ color: 'rgb(158, 158, 158)', fontSize: '14px'}}>From:</b> <span style={{ color: 'white'}}>{character.origin.name} </span><br />
-                    <b className='test-color' style={{ color: 'rgb(158, 158, 158)', fontSize: '14px'}}>Last seen location:</b> <span style={{ color: 'white'}}>{character.location.name} </span><br />
-                  </Card.Text>
-                </div>
-               
-              </Card.Body>
-            </div>
-          </Card>
-          </Link>
-        </Col>
-      ))}
-    </Row>
-  </div>
-  <div className="d-flex justify-content-between align-items-center my-3 mx-2">
-    <div className="text-light">{`${currentPage} of ${totalPages}`}</div>
-    <div>
-      <button className="btn btn-light mx-1" onClick={() => setCurrentPage(currentPage - 1)} disabled={currentPage === 1}>Prev</button>
-      <button className="btn btn-light mx-1" onClick={() => setCurrentPage(currentPage + 1)} disabled={currentPage === totalPages}>Next</button>
-    </div>
-  </div>
-</div>
-
+                          <Card.Title className="text-start" style={{ color: 'white', fontSize: '1.5rem', fontWeight: '800' }}>{character.name}</Card.Title>
+                          <div>
+                            <Card.Text className="text-start" style={{ color: 'white', fontSize: '14px' }}>
+                              {getStatusIcon(character.status)} {character.status} - {character.species}
+                            </Card.Text>
+                          </div>
+                          <Card.Text className="text-start">
+                            <b className='test-color' style={{ color: 'rgb(158, 158, 158)', fontSize: '14px' }}>Gender:</b> <span style={{ color: 'white' }}>{character.gender} </span><br />
+                            <b className='test-color' style={{ color: 'rgb(158, 158, 158)', fontSize: '14px' }}>From:</b> <span style={{ color: 'white' }}>{character.origin.name} </span><br />
+                            <b className='test-color' style={{ color: 'rgb(158, 158, 158)', fontSize: '14px' }}>Last seen location:</b> <span style={{ color: 'white' }}>{character.location.name} </span><br />
+                          </Card.Text>
+                        </div>
+                      </Card.Body>
+                    </div>
+                  </Card>
+                </Link>
+              </Col>
+            ))}
+          </Row>
+        </div>
+        <div className="d-flex justify-content-between align-items-center my-3 mx-2">
+          <div className="text-light">{`${currentPage} of ${totalPages}`}</div>
+          <div>
+            <button className="btn btn-light mx-1" onClick={() => setCurrentPage(currentPage - 1)} disabled={currentPage === 1}>Prev</button>
+            <button className="btn btn-light mx-1" onClick={() => setCurrentPage(currentPage + 1)} disabled={currentPage === totalPages}>Next</button>
+          </div>
+        </div>
+      </div>
     </Container>
   );
-  
 }
 
 export default AllChar

@@ -1,3 +1,6 @@
+* {
+  overflow: hidden;
+}
 .App {
   text-align: center;
   background-color: rgb(39, 43, 51);

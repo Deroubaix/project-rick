@@ -2,9 +2,26 @@
     background-color: rgb(39, 43, 51);
 } */
 
-body {
+/* body {
     background-color: rgb(39, 43, 51);
-}
+} */
+
+.custom-card {
+    border-radius: 10px;
+    overflow: hidden;
+    border: 2px solid transparent;
+    margin: 0 auto;
+    max-width: 400px;
+    transition: all 0.3s;
+  }
+  
+  .custom-card:hover {
+    border-color: blue;
+    transform: scale(1.02);
+    box-shadow: 0 0 10px #08BAE3;
+  }
+  
+  
 
 /* .card-body {
     background-color: rgba(0, 0, 0, 0.14);
