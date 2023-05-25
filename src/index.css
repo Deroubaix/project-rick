@@ -30,6 +30,28 @@ code {
   }
 }
 
+@media (min-width: 768px) {
+  .row-cols-md-2 > * {
+    flex: 0 0 auto;
+    width: 50%;
+  }
+
+  .row-cols-md-2 > .full-width {
+    width: 100%;
+  }
+}
+
+.episode-container {
+  transition: all 0.3s;
+}
+
+.episode-container:hover {
+  transform: scale(1.02);
+}
+
+
+
+
 .episode-container {
   background-color: rgb(60, 62, 68);
   border-radius: 10px;
@@ -37,9 +59,6 @@ code {
   height: 100%;
   box-shadow: 0 0 10px rgba(8, 186, 227, 0.5), 0 0 10px rgba(8, 186, 227, 0.5) inset;
 }
-
-
-
 
 
 .home-page {
@@ -54,15 +73,6 @@ code {
     align-items: center; 
     height: 650px;
 }
-
-/* #navigate {
-  background-color: black;
-  color: white;
-}
-#navigate .nav-link {
-
-  color: white;
-} */
 
 #r-m{
   margin: 50px 50px 20px;

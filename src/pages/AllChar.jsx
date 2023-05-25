@@ -68,7 +68,7 @@ function AllChar() {
                   <Card className="my-2 custom-card " style={{ borderRadius: '10px', overflow: 'hidden', border: 'none', width: '100%',  margin: '0 auto' , maxWidth: '400px' }}>
                     <div className="d-flex flex-column" style={{ height: '100%' }}>
                       <Card.Img variant="top" src={character.image} alt={character.name} style={{ height: 'auto', objectFit: 'cover', width: '100%', minHeight: '200px' }} />
-                      <Card.Body className="d-flex flex-column w-100 hover-shadow" style={{ flex: '1', paddingLeft: '20px', backgroundColor: 'rgb(39, 43, 51)', width: '100%', border: '1px solid transparent', transition: 'border-color 0.6s' }}>
+                      <Card.Body className="d-flex flex-column " style={{ flex: '1', paddingLeft: '20px', backgroundColor: 'rgb(39, 43, 51)', width: '100%', border: '1px solid transparent', transition: 'border-color 0.6s' }}>
                         <div>
                           <Card.Title className="text-start" style={{ color: 'white', fontSize: '1.5rem', fontWeight: '800' }}>{character.name}</Card.Title>
                           <div>

@@ -1,4 +1,8 @@
-* {
+/* * {
+  overflow: hidden;
+} */
+
+body {
   overflow: hidden;
 }
 .App {
@@ -40,3 +44,4 @@
     transform: rotate(360deg);
   }
 }
+
