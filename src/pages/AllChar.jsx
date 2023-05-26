@@ -27,7 +27,7 @@ function AllChar() {
   };
 
   useEffect(() => {
-    setLoading(true); 
+    setLoading(false); 
     getAllChar(currentPage);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentPage, searchName]);
