@@ -1,6 +1,6 @@
-# Getting Started with Create React App
+# Project Rick
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project uses [The Rick and Morty API](https://rickandmortyapi.com/) that shows all characters and episodes from the show. Explore and see your favorite character's episodes and episodes cast.
 
 ## Available Scripts
 
