@@ -12,8 +12,9 @@ function App() {
   return (
     <div style={{  backgroundColor: 'rgb(39, 43, 51)'}}>
       <Navbar />
-      <div style={{  }}>
+      <div>
         <Routes>
+          <Route path='/' element={<AllChar />} /> 
           <Route path='/allepisodes' element={<AllEpisodes />} />
           <Route path='/allcharacters' element={<AllChar />} />
           <Route path='/charactersepisode/:id' element={<CharEpisodes />} />
