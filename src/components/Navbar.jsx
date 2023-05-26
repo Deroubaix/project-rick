@@ -6,7 +6,7 @@ import { NavLink } from 'react-router-dom';
 
 function Navigation() {
   return (
-    <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" fixed="top">
+    <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" fixed="top" >
       <Container>
         <Navbar.Brand style={{
           fontFamily: 'get_schwifty',
@@ -19,7 +19,7 @@ function Navigation() {
         }}>Rick and Morty</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="ms-auto">
+          <Nav className="ms-auto" style={{  alignItems: 'center'}}>
             <NavLink to="/allcharacters" className="nav-link">All Characters</NavLink>
             <NavLink to="/allepisodes" className="nav-link">All Episodes</NavLink>
           </Nav>

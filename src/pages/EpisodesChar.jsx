@@ -4,33 +4,36 @@ import { Card, Row, Col, Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 import { FaCheckCircle, FaTimesCircle, FaQuestionCircle } from 'react-icons/fa';
+import LoadingComponent from '../components/Loading';
 
 const EpisodeCharacters = () => {
-  const { id } = useParams();
-  const [characters, setCharacters] = useState([]);
-  const [episodeName, setEpisodeName] = useState('');
-
-  useEffect(() => {
-    const fetchEpisodeCharacters = async () => {
-      try {
-        const response = await axios.get(`https://rickandmortyapi.com/api/episode/${id}`);
-        const episodeData = response.data;
-        const characterPromises = episodeData.characters.map((characterUrl) => axios.get(characterUrl));
-        const characterResponses = await Promise.all(characterPromises);
-        const characterData = characterResponses.map((characterResponse) => characterResponse.data);
-        setCharacters(characterData);
-        setEpisodeName(episodeData.name);
-      } catch (error) {
-        console.error('Error fetching episode characters:', error.message);
-      }
-    };
-
-    fetchEpisodeCharacters();
-  }, [id]);
-
-  if (characters.length === 0) {
-    return <div>Loading characters...</div>;
-  }
+    const { id } = useParams();
+    const [characters, setCharacters] = useState([]);
+    const [episodeName, setEpisodeName] = useState('');
+    const [loading, setLoading] = useState(true); // State variable to track loading status
+  
+    useEffect(() => {
+      const fetchEpisodeCharacters = async () => {
+        try {
+          const response = await axios.get(`https://rickandmortyapi.com/api/episode/${id}`);
+          const episodeData = response.data;
+          const characterPromises = episodeData.characters.map((characterUrl) => axios.get(characterUrl));
+          const characterResponses = await Promise.all(characterPromises);
+          const characterData = characterResponses.map((characterResponse) => characterResponse.data);
+          setCharacters(characterData);
+          setEpisodeName(episodeData.name);
+          setLoading(false); // Set loading to false when data is fetched
+        } catch (error) {
+          console.error('Error fetching episode characters:', error.message);
+        }
+      };
+  
+      fetchEpisodeCharacters();
+    }, [id]);
+  
+    if (loading) {
+      return <LoadingComponent />; // Show the loading component while data is being fetched
+    }
 
   function getStatusIcon(status) {
     switch(status) {

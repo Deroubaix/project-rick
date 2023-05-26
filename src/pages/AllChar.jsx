@@ -1,55 +1,64 @@
-import axios from 'axios'
-import { useEffect, useState } from 'react'
-import { Card, Row, Col, Container, Form } from 'react-bootstrap'
+import axios from 'axios';
+import { useEffect, useState } from 'react';
+import { Card, Row, Col, Container, Form } from 'react-bootstrap';
 import { FaCheckCircle, FaTimesCircle, FaQuestionCircle } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import "../styles/char.css";
+import LoadingComponent from '../components/Loading';
 
 const apiAllChar = "https://rickandmortyapi.com/api/character/?name=";
 
 function AllChar() {
-  const [allCharacters, setAllCharacters] = useState([])
-  const [currentPage, setCurrentPage] = useState(1)
-  const [totalPages, setTotalPages] = useState(1)
-  const [searchName, setSearchName] = useState("")
+  const [allCharacters, setAllCharacters] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [totalPages, setTotalPages] = useState(1);
+  const [searchName, setSearchName] = useState("");
+  const [loading, setLoading] = useState(true); 
 
-  const getAllChar = async(page) => {
+  const getAllChar = async (page) => {
     try {
-      let response = await axios.get(apiAllChar + searchName + "&page=" + page)
-      setAllCharacters(response.data.results)
-      setTotalPages(response.data.info.pages)
+      let response = await axios.get(apiAllChar + searchName + "&page=" + page);
+      setAllCharacters(response.data.results);
+      setTotalPages(response.data.info.pages);
+      setLoading(false); 
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
-  }
+  };
 
   useEffect(() => {
-    getAllChar(currentPage)
-  }, [currentPage, searchName])
+    setLoading(true); 
+    getAllChar(currentPage);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [currentPage, searchName]);
 
   function getStatusIcon(status) {
-    switch(status) {
+    switch (status) {
       case 'Alive':
-        return <FaCheckCircle style={{color: 'green'}} />;
+        return <FaCheckCircle style={{ color: 'green' }} />;
       case 'Dead':
-        return <FaTimesCircle style={{color: 'red'}} />;
+        return <FaTimesCircle style={{ color: 'red' }} />;
       default:
-        return <FaQuestionCircle style={{color: 'grey'}} />;
+        return <FaQuestionCircle style={{ color: 'grey' }} />;
     }
   }
 
   function handleSearchNameChange(event) {
-    setSearchName(event.target.value)
+    setSearchName(event.target.value);
   }
 
   function filterCharacters(character) {
     if (searchName === "") {
-      return true
+      return true;
     } else if (character.name.toLowerCase().includes(searchName.toLowerCase())) {
-      return true
+      return true;
     } else {
-      return false
+      return false;
     }
+  }
+
+  if (loading) {
+    return <LoadingComponent />; 
   }
 
   return (
@@ -90,7 +99,7 @@ function AllChar() {
             ))}
           </Row>
         </div>
-        <div className="d-flex justify-content-between align-items-center my-3 mx-2">
+        <div className="d-flex justify-content-between align-items-center my-3 mx-2" style={{  paddingTop: '0px', marginTop: '0px' }}>
           <div className="text-light">{`${currentPage} of ${totalPages}`}</div>
           <div>
             <button className="btn btn-light mx-1" onClick={() => setCurrentPage(currentPage - 1)} disabled={currentPage === 1}>Prev</button>

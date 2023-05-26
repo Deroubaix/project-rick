@@ -2,15 +2,18 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Card, Col, Container, Row, Button, Form } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import LoadingComponent from '../components/Loading';
 
 const AllEpisodes = () => {
   const [episodes, setEpisodes] = useState([]);
   const [page, setPage] = useState(1);
   const [hasMore, setHasMore] = useState(true);
   const [searchName, setSearchName] = useState('');
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchEpisodes = async () => {
+        setLoading(true);
       try {
         const response = await axios.get(`https://rickandmortyapi.com/api/episode?page=${page}`);
         const newEpisodes = response.data.results;
@@ -19,6 +22,7 @@ const AllEpisodes = () => {
       } catch (error) {
         console.error('Error fetching episodes:', error);
       }
+      setLoading(false);
     };
 
     fetchEpisodes();
@@ -40,6 +44,10 @@ const AllEpisodes = () => {
   const handleNextPage = () => {
     setPage((prevPage) => prevPage + 1);
   };
+
+  if (loading) {
+    return <LoadingComponent />; 
+  }
 
   return (
     <Container className="d-flex justify-content-center align-items-start" style={{ minHeight: '100vh' }}>
