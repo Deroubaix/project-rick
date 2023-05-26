@@ -2,6 +2,8 @@
 
 This project uses [The Rick and Morty API](https://rickandmortyapi.com/) that shows all characters and episodes from the show. Explore and see your favorite character's episodes and episodes cast.
 
+<a href='https://rickandmortyproject-api.netlify.app/' target='_blank'>See Project Rick</a>
+
 ## Available Scripts
 
 In the project directory, you can run:
