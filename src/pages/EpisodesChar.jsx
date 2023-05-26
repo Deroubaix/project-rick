@@ -50,7 +50,7 @@ const EpisodeCharacters = () => {
     <Container className="d-flex justify-content-center align-items-start" style={{ minHeight: '100vh' }}>
       <div className="d-flex flex-column" style={{ backgroundColor: 'rgb(39, 43, 51)', width: '100%' }}>
         <div className="mb-3">
-          <h2 className="text-center  mt-3" style={{ paddingTop: '60px', fontFamily: 'get_schwifty',
+          <h2 className="text-center  mt-3 episode-name" style={{ paddingTop: '60px', fontFamily: 'get_schwifty',
           fontSize: '1.8rem',
           color: '#08BAE3',
           zIndex: 70,

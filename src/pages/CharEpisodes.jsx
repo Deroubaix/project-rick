@@ -42,7 +42,7 @@ function Episodes() {
   }
 
   if (loading) {
-    return <LoadingComponent />; // Show the loading component while data is being fetched
+    return <LoadingComponent />; 
   }
 
   return (
@@ -50,7 +50,7 @@ function Episodes() {
       {character && (
         <Container className="mt-4" style={{ backgroundColor: "#282c34", paddingTop: "50px", minHeight: '100vh' }}>
           <Row>
-            <Col md={4} style={{ backgroundColor: "#282c34", paddingTop: "30px", paddingBottom: "20px" }}>
+            <Col md={4} style={{ backgroundColor: "#282c34", paddingTop: "20px", paddingBottom: "20px" }}>
               <div className="d-flex justify-content-center">
                 <Image
                   src={character.image}
@@ -104,7 +104,7 @@ function Episodes() {
               <style>{`
     @media (max-width: 768px) {
       .text-light .row {
-        max-height: calc(100vh - 545px); // Adjusted value for mobile screens
+        max-height: calc(100vh - 525px); // Adjusted value for mobile screens
       }
     }
   `}</style>
