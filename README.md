@@ -4,6 +4,7 @@ This project uses [The Rick and Morty API](https://rickandmortyapi.com/) that sh
 
 <a href='https://rickandmortyproject-api.netlify.app/' target='_blank'>See Project Rick</a>
 
+![Alt Text](https://github.com/Deroubaix/project-rick/blob/49944b98e708f463f07b9d501de6cf1a9050c353/Screen%20Shot%202023-05-26%20at%2017.08.25.png) 
 ## Available Scripts
 
 In the project directory, you can run:
