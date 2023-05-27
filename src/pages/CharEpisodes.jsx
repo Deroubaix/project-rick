@@ -46,7 +46,7 @@ function Episodes() {
   }
 
   return (
-    <div style={{ position: "relative", zIndex: "1"  }}>
+    <div style={{ position: "relative", zIndex: "0"  }}>
       {character && (
         <Container className="mt-4" style={{ backgroundColor: "#282c34", paddingTop: "50px", minHeight: '100vh' }}>
           <Row>
@@ -60,7 +60,7 @@ function Episodes() {
                 />
               </div>
               <h3 className="text-light text-center" style={{ paddingTop: "20px", paddingBottom: "10px", color: 'white', fontSize: '1.5rem', fontWeight: '800' }}>{character.name} </h3>
-              <div className="d-flex flex-column justify-content-between " style={{ height: "100%" }}>
+              <div className="d-flex flex-column justify-content-between " >
                 <div>
                   <Card.Text className="text-center" style={{ color: 'white', fontSize: '14px' }}>
                     {getStatusIcon(character.status)} {character.status} - {character.species} <br></br>
