@@ -1,4 +1,4 @@
-# Project Rick
+# Project Rick and Morty
 
 This project uses [The Rick and Morty API](https://rickandmortyapi.com/) that shows all characters and episodes from the show. Explore, search and see your favorite character's episodes and episodes cast.
 
