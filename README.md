@@ -7,6 +7,9 @@ This project uses [The Rick and Morty API](https://rickandmortyapi.com/) that sh
 ![Alt Text](https://github.com/Deroubaix/project-rick/blob/49944b98e708f463f07b9d501de6cf1a9050c353/Screen%20Shot%202023-05-26%20at%2017.08.25.png) 
 
 ![Alt Text](https://github.com/Deroubaix/project-rick/blob/d67ab0730b65c12c587520e2ec741659e1a60485/Screen-Recording-2023-05-26-at-1.gif) 
+# Mobile View
+
+
 ## Available Scripts
 
 In the project directory, you can run:
