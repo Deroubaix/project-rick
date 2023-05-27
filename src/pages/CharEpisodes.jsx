@@ -46,9 +46,9 @@ function Episodes() {
   }
 
   return (
-    <div style={{ position: "relative", zIndex: "0"  }}>
+    <div style={{ position: "relative", zIndex: "1"  }}>
       {character && (
-        <Container className="mt-4" style={{ backgroundColor: "#282c34", paddingTop: "50px", minHeight: '100vh' }}>
+        <Container  style={{ backgroundColor: "#282c34", paddingTop: "70px", minHeight: '100vh' }}>
           <Row>
             <Col md={4} style={{ backgroundColor: "#282c34", paddingTop: "20px", paddingBottom: "20px" }}>
               <div className="d-flex justify-content-center">

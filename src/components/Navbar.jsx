@@ -49,7 +49,7 @@ function Navigation() {
             <NavLink
               to="/allepisodes"
               className="nav-link"
-              activeClassName="active"
+              activeclassname="active"
             >
               All Episodes
             </NavLink>
