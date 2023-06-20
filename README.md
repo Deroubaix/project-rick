@@ -3,10 +3,13 @@
 This project uses [The Rick and Morty API](https://rickandmortyapi.com/) that shows all characters and episodes from the show. Explore, search and see your favorite character's episodes and episodes cast.
 
 <a href='https://rickandmortyproject-api.netlify.app/' target='_blank'>See Demo</a>
-
+# Web View
 ![Alt Text](https://github.com/Deroubaix/project-rick/blob/49944b98e708f463f07b9d501de6cf1a9050c353/Screen%20Shot%202023-05-26%20at%2017.08.25.png) 
 
 ![Alt Text](https://github.com/Deroubaix/project-rick/blob/d67ab0730b65c12c587520e2ec741659e1a60485/Screen-Recording-2023-05-26-at-1.gif) 
+# Mobile View
+![Alt Text](https://github.com/Deroubaix/project-rick/blob/8e90a45027357baa863a2826bc4156c687348557/Screen%20Shot%202023-05-27%20at%2015.12.20.png)![Alt Text](https://github.com/Deroubaix/project-rick/blob/8e90a45027357baa863a2826bc4156c687348557/Screen%20Shot%202023-05-27%20at%2015.10.29.png)![Alt Text](https://github.com/Deroubaix/project-rick/blob/8e90a45027357baa863a2826bc4156c687348557/Screen%20Shot%202023-05-27%20at%2015.11.30.png)
+
 ## Available Scripts
 
 In the project directory, you can run:
