@@ -7,7 +7,7 @@ const Footer = () => {
       <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%', flexDirection: 'column' }}>
         <div style={{ display: 'flex', alignItems: 'center', width: '100%' }}>
           <p style={{ marginRight: '10px', fontSize: '10px', marginBottom: '0' }}>© 2023 Marisha Deroubaix</p>
-          <a href="https://github.com/Deroubaix?tab=overview&from=2023-04-01&to=2023-04-30" target="_blank" rel="noopener noreferrer" style={{ color: 'white', fontSize: '1rem', display: 'flex', alignItems: 'center' }}>
+          <a href="https://github.com/Deroubaix/project-rick" target="_blank" rel="noopener noreferrer" style={{ color: 'white', fontSize: '1rem', display: 'flex', alignItems: 'center' }}>
             <FaGithub style={{ marginRight: '5px' }} />
           </a>
         </div>
